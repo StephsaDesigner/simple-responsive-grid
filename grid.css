@@ -1,0 +1,51 @@
+
+/*Global reset and box-sizing rule*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*Rule to make sure images behave fluidly*/
+img{
+  width: auto;
+  max-width: 100%;
+  height: auto; !important;
+}
+
+/*The wrapper*/
+.wrapper{
+  width: 100%;
+  margin: 0 auto;
+  /*Take me out latter*/
+  background-color: yellow;
+}
+/*Note: Bear in mind we're working mobile first.
+ Our container starts out at 100% viewport width, but we'll alter that for larger screens.*/
+
+/*Making sure that groups of columns clear each other properly.*/
+.wrapper:after,
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row{
+  /*Take me out latter*/
+  background-color: blue;
+}
+
+/*use an attribute selector to target and style all of these in one go.*/
+[class*='column-']{
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+  /*Take me out latter*/
+  background-color: red;
+}
